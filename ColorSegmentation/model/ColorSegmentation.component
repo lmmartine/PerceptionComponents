@@ -1,8 +1,11 @@
 ComponentDefinition ColorSegmentation logo "/ColorSegmentation/model/logo.png"
 {
 
-Activity Segmentation
+Activity Capture
 	{
-		DefaultTrigger PeriodicTimer 1.0 Hz
+	}
+	AnswerPort ObjectQueryServiceAnsw implements CommObjectRecognitionObjects.ObjectQueryService {
+	}
+	RequestHandler ObjectSegmentationService triggeredFrom ObjectQueryServiceAnsw {
 	}
 }

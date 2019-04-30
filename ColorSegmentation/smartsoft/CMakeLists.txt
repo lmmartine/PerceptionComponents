@@ -15,7 +15,13 @@
 # delete it before running the code generator.
 #--------------------------------------------------------------------------
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
+SET(OpenCV_DIR /usr/local/lib/cmake/opencv4)
+find_package( OpenCV REQUIRED )
 
 # find the SmartSoft CMake Macros (version 2 that uses CMake v3)
 FIND_FILE(SMART_MACROS SmartMacros2.cmake PATHS $ENV{SMART_ROOT_ACE}/CMakeMacros /opt/smartSoftAce/CMakeMacros/)
@@ -73,7 +79,7 @@ INCLUDE(${CMAKE_CURRENT_LIST_DIR}/src-gen/MixedPortTargetConfigs.cmake)
 #################################################################################
 
 # SmartSoftKernel is one of the default dependencies for each component
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} AceSmartSoftKernel)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} AceSmartSoftKernel ${OpenCV_LIBS})
 
 # automatically link to all dependent CommunicationObjects
 SMART_COMPONENT_AUTOLINK_DEPENDENCIES()

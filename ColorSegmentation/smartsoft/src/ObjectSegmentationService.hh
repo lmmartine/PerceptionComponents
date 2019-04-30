@@ -14,21 +14,17 @@
 // If you want the toolchain to re-generate this file, please 
 // delete it before running the code generator.
 //--------------------------------------------------------------------------
-#ifndef _SEGMENTATION_HH
-#define _SEGMENTATION_HH
+#ifndef _OBJECTSEGMENTATIONSERVICE_USER_HH
+#define _OBJECTSEGMENTATIONSERVICE_USER_HH
+		
+#include "ObjectSegmentationServiceCore.hh"
 
-#include "SegmentationCore.hh"
-
-class Segmentation  : public SegmentationCore
+class ObjectSegmentationService : public ObjectSegmentationServiceCore
 {
-private:
+protected:
 public:
-	Segmentation(SmartACE::SmartComponent *comp);
-	virtual ~Segmentation();
-	
-	virtual int on_entry();
-	virtual int on_execute();
-	virtual int on_exit();
+	ObjectSegmentationService(Smart::IQueryServerPattern<CommObjectRecognitionObjects::CommObjectRecognitionId, CommObjectRecognitionObjects::CommObjectRecognitionObjectProperties, SmartACE::QueryId>* server);
+	virtual ~ObjectSegmentationService();
+	virtual void handleQuery(const SmartACE::QueryId &id, const CommObjectRecognitionObjects::CommObjectRecognitionId& request);
 };
-
 #endif

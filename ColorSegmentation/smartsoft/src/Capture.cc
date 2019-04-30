@@ -14,30 +14,42 @@
 // If you want the toolchain to re-generate this file, please 
 // delete it before running the code generator.
 //--------------------------------------------------------------------------
-#include "Segmentation.hh"
+#include "Capture.hh"
 #include "ColorSegmentation.hh"
 
 #include <iostream>
 
-Segmentation::Segmentation(SmartACE::SmartComponent *comp) 
-:	SegmentationCore(comp)
+Capture::Capture(SmartACE::SmartComponent *comp) 
+:	CaptureCore(comp)
 {
-	std::cout << "constructor Segmentation\n";
-}
-Segmentation::~Segmentation() 
-{
-	std::cout << "destructor Segmentation\n";
+	std::cout << "constructor Capture\n";
+    image_example = cv::imread("/home/lmartinez/Pictures/inst2img1.png", 1);
+
 }
 
 
+Capture::~Capture() 
+{
+	std::cout << "destructor Capture\n";
+}
 
-int Segmentation::on_entry()
+
+cv::Mat Capture::Segmentation(cv::Mat img)
+{
+	std::cout << "Segmentation module\n";
+    cv::Mat segmented_image = img;
+
+    return segmented_image;
+}
+
+
+int Capture::on_entry()
 {
 	// do initialization procedures here, which are called once, each time the task is started
 	// it is possible to return != 0 (e.g. when initialization fails) then the task is not executed further
 	return 0;
 }
-int Segmentation::on_execute()
+int Capture::on_execute()
 {
 	// this method is called from an outside loop,
 	// hence, NEVER use an infinite loop (like "while(1)") here inside!!!
@@ -46,12 +58,12 @@ int Segmentation::on_execute()
 	// to get the incoming data, use this methods:
 	Smart::StatusCode status;
 
-	std::cout << "Hello from Segmentation " << std::endl;
+	std::cout << "Hello from Capture " << std::endl;
 
 	// it is possible to return != 0 (e.g. when the task detects errors), then the outer loop breaks and the task stops
 	return 0;
 }
-int Segmentation::on_exit()
+int Capture::on_exit()
 {
 	// use this method to clean-up resources which are initialized in on_entry() and needs to be freed before the on_execute() can be called again
 	return 0;
