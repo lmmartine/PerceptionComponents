@@ -1,0 +1,11 @@
+ComponentDefinition CTest logo "/CTest/model/logo.png"
+{
+
+Activity Test
+	{
+	}
+	RequestPort ObjectRecognitionQueryServiceReq implements CommObjectRecognitionObjects.ObjectRecognitionQueryService {
+	}
+RequestPort ColorQueryServiceReq implements CommObjectRecognitionObjects.ColorQueryService {
+	}
+}
