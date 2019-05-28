@@ -52,17 +52,18 @@ int Test::on_execute()
 	Smart::StatusCode status;
 	if(n_times < 1){
 
-		//Set parameters  ****TODO simplify
+		//Set parameters  ****TODO use namespace
 		CommObjectRecognitionObjects::CommObjectRecognitionInformation image_information;
 		CommObjectRecognitionObjects::CommObjectRecognitionObjectProperties object_information;
 		CommObjectRecognitionObjects::ROI roi;
 		CommObjectRecognitionObjects::CommPoint2d point;
-
+		CommObjectRecognitionObjects::Color c;
 		//Example point
-		point.setX(270).setY(296);
-		roi.setWidth(90).setHeight(220).setPoint(point);
+		point.setX(412).setY(45);
+		roi.setWidth(0).setHeight(0).setPoint(point); //90 290
+		c.setName(CommObjectRecognitionObjects::Colors::GRAY); // Gray with default values
 		image_information.setRoi(roi);
-
+		image_information.setColor(c);
 
 		status = COMP->objectRecognitionQueryServiceReq->query(image_information, object_information);
 		if(status != Smart::SMART_OK) {
