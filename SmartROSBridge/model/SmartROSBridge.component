@@ -1,0 +1,7 @@
+ComponentDefinition SmartROSBridge logo "/SmartROSBridge/model/logo.png"
+{
+
+Activity ROSbridge
+	{
+	}
+}

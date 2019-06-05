@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ComponentDefinition="http://www.ecore.org/component/ComponentDefinition" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="__vd5AId3EempgYTel9LB1Q" selectedViews="_B3xpUId4EempgYTel9LB1Q" version="14.1.0.201810161215">
+    <semanticResources>model/SmartROSBridge.component</semanticResources>
+    <semanticResources>model/SmartROSBridge.componentDocumentation</semanticResources>
+    <semanticResources>model/SmartROSBridge.componentParameters</semanticResources>
+    <semanticResources>platform:/resource/CommBasicObjects/model/CommBasicObjects.services</semanticResources>
+    <semanticResources>platform:/resource/CommBasicObjects/model/CommBasicObjects.types</semanticResources>
+    <semanticResources>platform:/plugin/org.xtext.base.stateMachine/componentLifecycle/ComponentLifecycle.automaton</semanticResources>
+    <semanticResources>platform:/resource/CommBasicObjects/model/CommBasicObjects.modes</semanticResources>
+    <semanticResources>platform:/plugin/org.xtext.service.parameterDefinition/defaultParameterLib/defaultParameterLib.parameters</semanticResources>
+    <semanticResources>platform:/resource/CommBasicObjects/model/CommBasicObjects.parameters</semanticResources>
+    <semanticResources>platform:/resource/CommObjectRecognitionObjects/model/CommObjectRecognitionObjects.services</semanticResources>
+    <semanticResources>platform:/resource/CommObjectRecognitionObjects/model/CommObjectRecognitionObjects.types</semanticResources>
+    <semanticResources>platform:/resource/CommObjectRecognitionObjects/model/CommObjectRecognitionObjects.modes</semanticResources>
+    <semanticResources>platform:/resource/CommObjectRecognitionObjects/model/CommObjectRecognitionObjects.parameters</semanticResources>
+    <semanticResources>platform:/resource/DomainVision/model/DomainVision.services</semanticResources>
+    <semanticResources>platform:/resource/DomainVision/model/DomainVision.types</semanticResources>
+    <semanticResources>platform:/resource/CommManipulatorObjects/model/CommManipulatorObjects.types</semanticResources>
+    <semanticResources>platform:/resource/DomainVision/model/DomainVision.modes</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_B3xpUId4EempgYTel9LB1Q">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_CAGe4Id4EempgYTel9LB1Q" name="SmartROSBridge" repPath="#_B537EId4EempgYTel9LB1Q">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']"/>
+        <target xmi:type="ComponentDefinition:ComponentDefModel" href="model/SmartROSBridge.component#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_B537EId4EempgYTel9LB1Q" name="SmartROSBridge">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_B_8G0Id4EempgYTel9LB1Q" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_B_8t4Id4EempgYTel9LB1Q"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CA6XMId4EempgYTel9LB1Q" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_CA6-QId4EempgYTel9LB1Q" type="Sirius" element="_B537EId4EempgYTel9LB1Q" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_CBPHUId4EempgYTel9LB1Q" type="2002" element="_B92cIId4EempgYTel9LB1Q">
+          <children xmi:type="notation:Node" xmi:id="_CBjQYId4EempgYTel9LB1Q" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_CBkegId4EempgYTel9LB1Q" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_QoY98Id4EempgYTel9LB1Q" type="3008" element="_Qnwr0Id4EempgYTel9LB1Q">
+              <children xmi:type="notation:Node" xmi:id="_QoZlAId4EempgYTel9LB1Q" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_QoazIId4EempgYTel9LB1Q" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_QoazIYd4EempgYTel9LB1Q"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_QoazIod4EempgYTel9LB1Q"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_QoY98Yd4EempgYTel9LB1Q" fontName="Ubuntu" fontHeight="8" bold="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QoY98od4EempgYTel9LB1Q" x="19" y="30" width="106" height="51"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_CBkegYd4EempgYTel9LB1Q"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_CBkegod4EempgYTel9LB1Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CBPHUYd4EempgYTel9LB1Q" fontName="Ubuntu" fontHeight="10" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CBPHUod4EempgYTel9LB1Q" x="300" y="192" width="159" height="171"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_CA6-QYd4EempgYTel9LB1Q"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_B92cIId4EempgYTel9LB1Q" name="SmartROSBridge" tooltipText="ComponentDefinition">
+      <target xmi:type="ComponentDefinition:ComponentDefinition" href="model/SmartROSBridge.component#//@component"/>
+      <semanticElements xmi:type="ComponentDefinition:ComponentDefinition" href="model/SmartROSBridge.component#//@component"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_B-ZOsId4EempgYTel9LB1Q" labelSize="10" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Qnwr0Id4EempgYTel9LB1Q" name="ROSbridge" tooltipText="Activity">
+        <target xmi:type="ComponentDefinition:Activity" href="model/SmartROSBridge.component#//@component/@elements.0"/>
+        <semanticElements xmi:type="ComponentDefinition:Activity" href="model/SmartROSBridge.component#//@component/@elements.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_QnxS4Id4EempgYTel9LB1Q" borderSize="1" borderSizeComputationExpression="1">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_B6MrMId4EempgYTel9LB1Q"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer"/>
+    <target xmi:type="ComponentDefinition:ComponentDefModel" href="model/SmartROSBridge.component#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
