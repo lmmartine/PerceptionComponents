@@ -23,17 +23,23 @@ ROSbridge::ROSbridge(SmartACE::SmartComponent *comp)
 :	ROSbridgeCore(comp)
 {
 
-	std::cout << "constructor ROSbridge start\n";
-	ros::NodeHandle n;
-	chatter_pub = n.advertise<std_msgs::String>("chatter", 1);
+	ros::NodeHandle priv("~");
 
-	std::cout << "constructor ROSbridge\n";
+	//chatter_pub = n.advertise<std_msgs::String>("chatter", 1);
+	 object_server  = priv.advertiseService("active", &ROSbridge::object_detection, this);
+
 }
 ROSbridge::~ROSbridge() 
 {
 	std::cout << "destructor ROSbridge\n";
 }
 
+bool ROSbridge::object_detection(robmosys_srvs::objectinformation::Request  &req, robmosys_srvs::objectinformation::Response &res)
+{
+	std::cout << "object_detection service\n";
+
+	return true;
+}
 
 
 int ROSbridge::on_entry()
@@ -45,6 +51,9 @@ int ROSbridge::on_entry()
 int ROSbridge::on_execute()
 {
 
+    if(ros::ok())
+        ros::spinOnce();
+
 	// this method is called from an outside loop,
 	// hence, NEVER use an infinite loop (like "while(1)") here inside!!!
 	// also do not use blocking calls which do not result from smartsoft kernel
@@ -52,13 +61,13 @@ int ROSbridge::on_execute()
 	// to get the incoming data, use this methods:
 	Smart::StatusCode status;
 
-	//publish
-	std_msgs::String msg;
-
-	std::stringstream ss;
-	msg.data = ss.str();
-
-	chatter_pub.publish(msg);
+//	//publish
+//	std_msgs::String msg;
+//
+//	std::stringstream ss;
+//	msg.data = ss.str();
+//
+//	chatter_pub.publish(msg);
 
 	// it is possible to return != 0 (e.g. when the task detects errors), then the outer loop breaks and the task stops
 	return 0;

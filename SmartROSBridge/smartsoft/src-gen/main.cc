@@ -19,8 +19,9 @@
 
 int main(int argc, char *argv[])
 {
-	ros::init(argc, argv, "SmartROSBridge");
 	std::cout << "main...\n";
+	ros::init(argc, argv, "SmartROSBridge");
+
 	// initialize component infrastructure (loading ini-file, creating ports, tasks, etc.)
 	SmartROSBridge::instance()->init(argc, argv);
 	// run component infrastructure until the component is commanded to shutdown

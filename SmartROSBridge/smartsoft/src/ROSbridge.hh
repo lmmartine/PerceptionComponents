@@ -21,6 +21,7 @@
 #include <ros/ros.h>
 #include <ros/package.h>
 #include "std_msgs/String.h"
+#include <robmosys_srvs/objectinformation.h>
 
 #include <sstream>
 
@@ -30,6 +31,8 @@ class ROSbridge  : public ROSbridgeCore
 {
 private:
 	ros::Publisher chatter_pub;
+	ros::ServiceServer object_server;
+
 public:
 
 	ROSbridge(SmartACE::SmartComponent *comp);
@@ -38,6 +41,9 @@ public:
 	virtual int on_entry();
 	virtual int on_execute();
 	virtual int on_exit();
+
+	bool object_detection(robmosys_srvs::objectinformation::Request  &req, robmosys_srvs::objectinformation::Response &res);
+
 };
 
 #endif
