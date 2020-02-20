@@ -23,6 +23,7 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+opcua-backend/src-gen \
 smartsoft/src \
 smartsoft/src-gen \
 smartsoft/src-gen/params \

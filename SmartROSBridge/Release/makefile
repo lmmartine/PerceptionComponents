@@ -11,6 +11,7 @@ RM := rm -rf
 -include smartsoft/src-gen/params/subdir.mk
 -include smartsoft/src-gen/subdir.mk
 -include smartsoft/src/subdir.mk
+-include opcua-backend/src-gen/subdir.mk
 -include subdir.mk
 -include objects.mk
 
