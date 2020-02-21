@@ -1,6 +1,7 @@
 # target configurations for OpcUaBackendComponentGeneratorExtension
 IF(SeRoNetSDK_FOUND)
 #TARGET_LINK_LIBRARIES(${PROJECT_NAME} SeRoNetSDK::SeRoNetSDK)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} CommPerceptionOpcUa)
 ENDIF(SeRoNetSDK_FOUND)
 
 # target configurations for PlainOpcUaROSBridgeExtension

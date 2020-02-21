@@ -31,6 +31,17 @@
             <styles xmi:type="notation:SortingStyle" xmi:id="_OjYkEVPuEeqDH6EXWf4QcA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_OjYkElPuEeqDH6EXWf4QcA"/>
           </children>
+          <children xmi:type="notation:Node" xmi:id="_lokPgFS1EeqJPKntvOnEAg" type="3012" element="_loZQYFS1EeqJPKntvOnEAg">
+            <children xmi:type="notation:Node" xmi:id="_lon54FS1EeqJPKntvOnEAg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_lon54VS1EeqJPKntvOnEAg" x="31" y="12"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_losLUFS1EeqJPKntvOnEAg" type="3014" element="_loaegFS1EeqJPKntvOnEAg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_losLUVS1EeqJPKntvOnEAg" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_losLUlS1EeqJPKntvOnEAg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_lokPgVS1EeqJPKntvOnEAg" fontName="Ubuntu" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lokPglS1EeqJPKntvOnEAg" x="221" y="67" width="30" height="30"/>
+          </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_OjX9AVPuEeqDH6EXWf4QcA" fontName="Ubuntu" fontHeight="10" bold="true"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OjX9AlPuEeqDH6EXWf4QcA" x="336" y="180" width="231" height="147"/>
         </children>
@@ -40,6 +51,17 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_OjUSoFPuEeqDH6EXWf4QcA" name="ROSBridge" tooltipText="ComponentDefinition: ROSBridge&#xA;">
       <target xmi:type="ComponentDefinition:ComponentDefinition" href="model/ROSBridge.component#//@component"/>
       <semanticElements xmi:type="ComponentDefinition:ComponentDefinition" href="model/ROSBridge.component#//@component"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_loZQYFS1EeqJPKntvOnEAg" name="ObjectQueryServiceReq" tooltipText="RequestPort" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ComponentDefinition:RequestPort" href="model/ROSBridge.component#//@component/@elements.1"/>
+        <semanticElements xmi:type="ComponentDefinition:RequestPort" href="model/ROSBridge.component#//@component/@elements.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:CustomStyle" uid="_loaegFS1EeqJPKntvOnEAg" showIcon="false" id="request">
+          <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='RequestPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.sirius.component.design/description/component.odesign#//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='RequestPortNode']"/>
+      </ownedBorderedNodes>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>

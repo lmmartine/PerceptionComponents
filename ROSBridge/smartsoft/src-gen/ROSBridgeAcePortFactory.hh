@@ -34,6 +34,7 @@ public:
 	virtual void initialize(ROSBridge *component, int argc, char* argv[]) override;
 	virtual int onStartup() override;
 
+	virtual Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> * createObjectQueryServiceReq() override;
 	
 	
 	// get a pointer to the internal component implementation

@@ -20,11 +20,20 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "ACE_HAS_VALGRIND"
+  "ROSCONSOLE_BACKEND_LOG4CXX"
+  "ROS_BUILD_SHARED_LIBS=1"
+  "ROS_PACKAGE_NAME=\"ROSBridge\""
   "__ACE_INLINE__"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
+  "/opt/ros/kinetic/include"
+  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
+  "/home/lmartinez/catkin_ws/devel/include"
   "../src"
   "../src-gen"
   "../src-gen/params"
@@ -34,6 +43,19 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ACE_wrappers"
   "/home/lmartinez/SOFTWARE/smartsoft/include/SmartSoft_CD_API"
   "/home/lmartinez/SOFTWARE/smartsoft/include"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommPerception/smartsoft/build"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommPerception/smartsoft/src"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommPerception/smartsoft/src-gen"
+  "/home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/smartXml"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommBasicObjects/smartsoft/build"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommBasicObjects/smartsoft/src"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommBasicObjects/smartsoft/src-gen"
+  "/home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/armadillo"
+  "/home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/smartProperty"
+  "/home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/transformationMatrices"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommObjectRecognitionObjects/smartsoft/build"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommObjectRecognitionObjects/smartsoft/src"
+  "/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommObjectRecognitionObjects/smartsoft/src-gen"
   )
 
 # Targets to which this target links.

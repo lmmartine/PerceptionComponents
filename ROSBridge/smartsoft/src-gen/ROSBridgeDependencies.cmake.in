@@ -15,4 +15,6 @@
 #--------------------------------------------------------------------------
 
 # other CommunicationObject-dependencies are added here (if there are any)
+LIST(APPEND ROSBridge_DEPENDENCIES CommPerception)
 
+LIST(REMOVE_DUPLICATES ROSBridge_DEPENDENCIES)

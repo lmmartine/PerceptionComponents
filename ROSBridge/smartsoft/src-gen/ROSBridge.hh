@@ -39,6 +39,10 @@ class ROSBridgeExtension;
 
 
 // include communication objects
+#include <CommPerception/CommInfDetection.hh>
+#include <CommPerception/CommInfDetectionACE.hh>
+#include <CommPerception/CommObjectProperties.hh>
+#include <CommPerception/CommObjectPropertiesACE.hh>
 
 // include tasks
 #include "Spin.hh"
@@ -92,6 +96,7 @@ public:
 	// define input-ports
 	
 	// define request-ports
+	Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> *objectQueryServiceReq;
 	
 	// define input-handler
 	
@@ -153,6 +158,7 @@ public:
 	/// start all associated timers
 	void startAllTimers();
 	
+	Smart::StatusCode connectObjectQueryServiceReq(const std::string &serverName, const std::string &serviceName);
 
 	// return singleton instance
 	static ROSBridge* instance()
@@ -205,6 +211,14 @@ public:
 		//--- server port parameter ---
 	
 		//--- client port parameter ---
+		struct ObjectQueryServiceReq_struct {
+			bool initialConnect;
+			std::string serverName;
+			std::string serviceName;
+			std::string wiringName;
+			long interval;
+			std::string roboticMiddleware;
+		} objectQueryServiceReq;
 		
 		// -- parameters for OpcUaBackendComponentGeneratorExtension
 		

@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ROSBridge.dir/src-gen/ROSBridge.cc.o"
   "CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeExtension.cc.o"
   "CMakeFiles/ROSBridge.dir/src-gen/main.cc.o"
-  "ROSBridge.pdb"
-  "ROSBridge"
+  "devel/lib/ROSBridge/ROSBridge.pdb"
+  "devel/lib/ROSBridge/ROSBridge"
 )
 
 # Per-language clean rules from dependency scanning.

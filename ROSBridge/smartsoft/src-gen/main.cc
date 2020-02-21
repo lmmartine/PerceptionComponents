@@ -15,9 +15,12 @@
 //--------------------------------------------------------------------------
 #include <iostream>
 #include "ROSBridge.hh"
+#include <ros/ros.h>
 
 int main(int argc, char *argv[])
 {
+	ros::init(argc, argv, "ROSBridge");
+
 	std::cout << "main...\n";
 	// initialize component infrastructure (loading ini-file, creating ports, tasks, etc.)
 	ROSBridge::instance()->init(argc, argv);

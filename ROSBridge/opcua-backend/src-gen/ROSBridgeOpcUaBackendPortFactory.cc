@@ -29,6 +29,8 @@
 #include <SeRoNetSDK/SeRoNet/OPCUA/Server/QueryServer.hpp>
 
 // include referenced CommunicationObject SeRoNetSDK self description implementations
+#include "CommPerceptionOpcUa/CommInfDetectionOpcUa.hh"
+#include "CommPerceptionOpcUa/CommObjectPropertiesOpcUa.hh"
 
 // create a static instance of the OpcUaBackendPortFactory
 static ROSBridgeOpcUaBackendPortFactory OpcUaBackendPortFactory;
@@ -54,6 +56,11 @@ int ROSBridgeOpcUaBackendPortFactory::onStartup()
     	return 0;
     }
 	return -1;
+}
+
+Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> * ROSBridgeOpcUaBackendPortFactory::createObjectQueryServiceReq()
+{
+	return new SeRoNet::OPCUA::Client::QueryClient<CommPerception::CommInfDetection, CommPerception::CommObjectProperties>(componentImpl);
 }
 
 

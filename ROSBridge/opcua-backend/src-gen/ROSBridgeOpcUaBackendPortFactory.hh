@@ -45,6 +45,7 @@ public:
 	virtual void initialize(ROSBridge *component, int argc, char* argv[]) override;
 	virtual int onStartup() override;
 
+	virtual Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> * createObjectQueryServiceReq() override;
 	
 	
 	virtual int onShutdown(const std::chrono::steady_clock::duration &timeoutTime=std::chrono::seconds(2)) override;

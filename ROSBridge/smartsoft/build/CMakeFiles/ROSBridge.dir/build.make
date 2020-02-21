@@ -313,25 +313,64 @@ ROSBridge_OBJECTS = \
 # External object files for target ROSBridge
 ROSBridge_EXTERNAL_OBJECTS =
 
-ROSBridge: CMakeFiles/ROSBridge.dir/src/SmartStateChangeHandler.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src/ROSBridgeCore.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src/CompHandler.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src/Spin.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/SpinCore.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeImpl.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeAcePortFactory.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridge.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeExtension.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/main.cc.o
-ROSBridge: CMakeFiles/ROSBridge.dir/build.make
-ROSBridge: /home/lmartinez/SOFTWARE/smartsoft/repos/AceSmartSoftFramework/build/AceSmartSoftKernel/libAceSmartSoftKernel.so.3.2.0
-ROSBridge: /opt/ACE_wrappers/lib/libACE.so
-ROSBridge: CMakeFiles/ROSBridge.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/Testing Components/ROSBridge/smartsoft/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ROSBridge"
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src/SmartStateChangeHandler.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src/ROSBridgeCore.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src/CompHandler.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src/Spin.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/SpinCore.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeImpl.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeAcePortFactory.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridge.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/ROSBridgeExtension.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/src-gen/main.cc.o
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/build.make
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libimage_transport.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libmessage_filters.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libclass_loader.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/libPocoFoundation.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libdl.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libroscpp.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libxmlrpcpp.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libroslib.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/librospack.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libcv_bridge.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/librosconsole.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libroscpp_serialization.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/librostime.so
+devel/lib/ROSBridge/ROSBridge: /opt/ros/kinetic/lib/libcpp_common.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/ROSBridge/ROSBridge: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft/repos/AceSmartSoftFramework/build/AceSmartSoftKernel/libAceSmartSoftKernel.so.3.2.0
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommPerception/smartsoft/build/libCommPerception.so.1.0.0
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommObjectRecognitionObjects/smartsoft/build/libCommObjectRecognitionObjects.so.1.0.0
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/DomainModelsRepositories/CommBasicObjects/smartsoft/build/libCommBasicObjects.so.1.0.0
+devel/lib/ROSBridge/ROSBridge: /opt/ACE_wrappers/lib/libACE.so
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/smartXml/build/libSmartXml.so.1.0.0
+devel/lib/ROSBridge/ROSBridge: /home/lmartinez/SOFTWARE/smartsoft/repos/UtilityRepository/smartProperty/build/libSmartProperty.so.1.0.0
+devel/lib/ROSBridge/ROSBridge: CMakeFiles/ROSBridge.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lmartinez/SOFTWARE/smartsoft-ace-mdsd-v3/repos/Testing Components/ROSBridge/smartsoft/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable devel/lib/ROSBridge/ROSBridge"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ROSBridge.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/ROSBridge.dir/build: ROSBridge
+CMakeFiles/ROSBridge.dir/build: devel/lib/ROSBridge/ROSBridge
 
 .PHONY : CMakeFiles/ROSBridge.dir/build
 

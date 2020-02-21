@@ -26,8 +26,8 @@ ACE_VERSION_FILE:FILEPATH=/opt/ACE_wrappers/ace/Version.h
 //The directory containing a CMake configuration file for AceSmartSoft.
 AceSmartSoft_DIR:PATH=/home/lmartinez/SOFTWARE/smartsoft/repos/AceSmartSoftFramework/build
 
-//No help, variable specified on the command line.
-BUILD_DEPENDENCIES:UNINITIALIZED=OFF
+//Activates dependency building
+BUILD_DEPENDENCIES:BOOL=OFF
 
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
@@ -592,4 +592,6 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+//MODIFIED property for variable: robmosys_srvs_DIR
+robmosys_srvs_DIR-MODIFIED:INTERNAL=ON
 

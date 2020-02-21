@@ -22,6 +22,8 @@
 #include <ros/package.h>
 #include "std_msgs/String.h"
 #include <robmosys_srvs/objectinformation.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <CommBasicObjects/CommPose3d.hh>
 
 #include <sstream>
 
@@ -41,7 +43,7 @@ public:
 	virtual int on_exit();
 
 	bool object_detection(robmosys_srvs::objectinformation::Request  &req, robmosys_srvs::objectinformation::Response &res);
-
+	geometry_msgs::PoseStamped commpose3d_to_posestamped(CommBasicObjects::CommPose3d smart_pose);
 };
 
 #endif

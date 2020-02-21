@@ -52,6 +52,11 @@ int ROSBridgeAcePortFactory::onStartup()
 	return componentImpl->startComponentInfrastructure();
 }
 
+Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> * ROSBridgeAcePortFactory::createObjectQueryServiceReq()
+{
+	return new SmartACE::QueryClient<CommPerception::CommInfDetection, CommPerception::CommObjectProperties>(componentImpl);
+}
+
 
 
 SmartACE::SmartComponent* ROSBridgeAcePortFactory::getComponentImpl()

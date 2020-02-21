@@ -22,6 +22,13 @@
 Spin::Spin(SmartACE::SmartComponent *comp) 
 :	SpinCore(comp)
 {
+
+	Smart::StatusCode status = COMP->objectQueryServiceReq->connect("ObjectLocation", "ObjectQueryServiceAnsw");
+//	Smart::StatusCode status2 = COMP->objectRecognitionQueryServiceReq->connect("ColorSegmentation", "ColorQueryServiceAnsw");
+
+	if(status != Smart::SMART_OK)
+		std::cerr << "objectRecognitionQueryServiceReq: " << Smart::StatusCodeConversion(status);
+
 	ros::NodeHandle priv("~");
 
 	//chatter_pub = n.advertise<std_msgs::String>("chatter", 1);
@@ -59,7 +66,38 @@ int Spin::on_exit()
 
 bool Spin::object_detection(robmosys_srvs::objectinformation::Request  &req, robmosys_srvs::objectinformation::Response &res)
 {
-	std::cout << "object_detection service\n";
+	CommPerception::CommInfDetection image_information;
+	CommPerception::CommObjectProperties object_information;
+
+	Smart::StatusCode status = COMP->objectQueryServiceReq->query(image_information, object_information);
+	if(status != Smart::SMART_OK) {
+		std::cerr << "objectQueryServiceReq: " << Smart::StatusCodeConversion(status);
+	}
+
+	std::vector<geometry_msgs::PoseStamped> objs_list;
+
+	for(size_t i = 0; i<object_information.getObjectsSize();i++){
+		CommPerception::ObjectCore objects = object_information.getObjectsElemAtPos(i);
+		CommBasicObjects::CommPose3d  p_object = objects.getPose();
+		objs_list.push_back(commpose3d_to_posestamped(p_object));
+	}
+
+	res.pose = objs_list;
 
 	return true;
+}
+
+geometry_msgs::PoseStamped Spin::commpose3d_to_posestamped(CommBasicObjects::CommPose3d smart_pose){
+
+	geometry_msgs::PoseStamped ros_poses;
+
+	ros_poses.header.frame_id = "/camera_depth_optical_frame";
+
+	ros_poses.pose.position.x = smart_pose.getPosition().getX();
+	ros_poses.pose.position.y = smart_pose.getPosition().getY();
+	ros_poses.pose.position.z = smart_pose.getPosition().getZ();
+
+	ros_poses.pose.orientation.w = 1;
+
+	return ros_poses;
 }

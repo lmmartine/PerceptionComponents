@@ -18,6 +18,10 @@
 #define ROSBRIDGE_PORTFACTORYINTERFACE_HH_
 
 // include communication objects
+#include <CommPerception/CommInfDetection.hh>
+#include <CommPerception/CommInfDetectionACE.hh>
+#include <CommPerception/CommObjectProperties.hh>
+#include <CommPerception/CommObjectPropertiesACE.hh>
 
 #include <chrono>
 
@@ -35,6 +39,7 @@ public:
 	virtual void initialize(ROSBridge *component, int argc, char* argv[]) = 0;
 	virtual int onStartup() = 0;
 
+	virtual Smart::IQueryClientPattern<CommPerception::CommInfDetection, CommPerception::CommObjectProperties> * createObjectQueryServiceReq() = 0;
 	
 
 	virtual int onShutdown(const std::chrono::steady_clock::duration &timeoutTime=std::chrono::seconds(2)) = 0;

@@ -55,6 +55,14 @@ maxActFreqHz 0.0
 ##########################
 # client port parameter
 
+[ObjectQueryServiceReq]
+initialConnect false
+serverName unknown
+serviceName unknown
+wiringName ObjectQueryServiceReq
+interval 1
+roboticMiddleware ACE_SmartSoft
+
 ##########################
 ## parameters of OpcUaBackendComponentGeneratorExtension
 

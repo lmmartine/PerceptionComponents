@@ -1,0 +1,8 @@
+prefix=/home/lmartinez/SOFTWARE/smartsoft
+
+Name: ROSBridge
+Description: Description of ROSBridge
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp roslib std_msgs std_srvs sensor_msgs image_transport cv_bridge robmosys_srvs

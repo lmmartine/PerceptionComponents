@@ -31,6 +31,7 @@ ROSBridge::ROSBridge()
 	std::cout << "constructor of ROSBridge\n";
 	
 	// set all pointer members to NULL
+	objectQueryServiceReq = NULL;
 	spin = NULL;
 	spinTrigger = NULL;
 	stateChangeHandler = NULL;
@@ -43,6 +44,12 @@ ROSBridge::ROSBridge()
 	connections.component.defaultScheduler = "DEFAULT";
 	connections.component.useLogger = false;
 	
+	connections.objectQueryServiceReq.initialConnect = false;
+	connections.objectQueryServiceReq.wiringName = "ObjectQueryServiceReq";
+	connections.objectQueryServiceReq.serverName = "unknown";
+	connections.objectQueryServiceReq.serviceName = "unknown";
+	connections.objectQueryServiceReq.interval = 1;
+	connections.objectQueryServiceReq.roboticMiddleware = "ACE_SmartSoft";
 	connections.spin.minActFreq = 0.0;
 	connections.spin.maxActFreq = 0.0;
 	// scheduling default parameters
@@ -86,6 +93,22 @@ void ROSBridge::setStartupFinished() {
 }
 
 
+Smart::StatusCode ROSBridge::connectObjectQueryServiceReq(const std::string &serverName, const std::string &serviceName) {
+	Smart::StatusCode status;
+	
+	if(connections.objectQueryServiceReq.initialConnect == false) {
+		return Smart::SMART_OK;
+	}
+	std::cout << "connecting to: " << serverName << "; " << serviceName << std::endl;
+	status = objectQueryServiceReq->connect(serverName, serviceName);
+	while(status != Smart::SMART_OK)
+	{
+		ACE_OS::sleep(ACE_Time_Value(0,500000));
+		status = COMP->objectQueryServiceReq->connect(serverName, serviceName);
+	}
+	std::cout << "connected.\n";
+	return status;
+}
 
 
 /**
@@ -95,6 +118,8 @@ void ROSBridge::setStartupFinished() {
 Smart::StatusCode ROSBridge::connectAndStartAllServices() {
 	Smart::StatusCode status = Smart::SMART_OK;
 	
+	status = connectObjectQueryServiceReq(connections.objectQueryServiceReq.serverName, connections.objectQueryServiceReq.serviceName);
+	if(status != Smart::SMART_OK) return status;
 	return status;
 }
 
@@ -183,6 +208,7 @@ void ROSBridge::init(int argc, char *argv[])
 		// TODO: set minCycleTime from Ini-file
 		
 		// create client ports
+		objectQueryServiceReq = portFactoryRegistry[connections.objectQueryServiceReq.roboticMiddleware]->createObjectQueryServiceReq();
 		
 		// create InputTaskTriggers and UpcallManagers
 		
@@ -201,6 +227,10 @@ void ROSBridge::init(int argc, char *argv[])
 		
 		wiringSlave = new SmartACE::WiringSlave(component);
 		// add client port to wiring slave
+		if(connections.objectQueryServiceReq.roboticMiddleware == "ACE_SmartSoft") {
+			//FIXME: this must also work with other implementations
+			dynamic_cast<SmartACE::QueryClient<CommPerception::CommInfDetection, CommPerception::CommObjectProperties>*>(objectQueryServiceReq)->add(wiringSlave, connections.objectQueryServiceReq.wiringName);
+		}
 		
 		
 		
@@ -301,6 +331,7 @@ void ROSBridge::fini()
 	// destroy InputTaskTriggers and UpcallManagers
 
 	// destroy client ports
+	delete objectQueryServiceReq;
 
 	// destroy server ports
 	// destroy event-test handlers (if needed)
@@ -405,6 +436,14 @@ void ROSBridge::loadParameter(int argc, char *argv[])
 			parameter.getBoolean("component", "useLogger", connections.component.useLogger);
 		}
 		
+		// load parameters for client ObjectQueryServiceReq
+		parameter.getBoolean("ObjectQueryServiceReq", "initialConnect", connections.objectQueryServiceReq.initialConnect);
+		parameter.getString("ObjectQueryServiceReq", "serviceName", connections.objectQueryServiceReq.serviceName);
+		parameter.getString("ObjectQueryServiceReq", "serverName", connections.objectQueryServiceReq.serverName);
+		parameter.getString("ObjectQueryServiceReq", "wiringName", connections.objectQueryServiceReq.wiringName);
+		if(parameter.checkIfParameterExists("ObjectQueryServiceReq", "roboticMiddleware")) {
+			parameter.getString("ObjectQueryServiceReq", "roboticMiddleware", connections.objectQueryServiceReq.roboticMiddleware);
+		}
 		
 		
 		// load parameters for task Spin

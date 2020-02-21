@@ -28,6 +28,11 @@ SMART_COMPONENT_PROJECT()
 #FIND_SMARTSOFT(3.0)
 #FIXME: generalize this
 FIND_PACKAGE(AceSmartSoft PATHS $ENV{SMART_ROOT_ACE}/modules)
+#if(statement)
+
+  set(robmosys_srvs_DIR  ~/catkin_ws/devel/share/robmosys_srvs/cmake)
+#endif(statement)
+
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp 
@@ -39,6 +44,8 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   robmosys_srvs
 )
+
+
 
 catkin_package(
   CATKIN_DEPENDS roscpp roslib std_msgs std_srvs sensor_msgs image_transport cv_bridge  robmosys_srvs
